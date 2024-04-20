@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using showCommand;
 public class ComboManager : MonoBehaviour {
     [SerializeField]Skill[] skills;
     [SerializeField]float comboResetTime = 5;
+    [SerializeField]CommandQueueShow commandQueueShow;
     string comboKeys = "";
     Queue<comboKey> comboKeysQueue = new Queue<comboKey>();
+
     int currentIndex;
     float currentTime;
     bool isKeying = false;
@@ -16,6 +19,7 @@ public class ComboManager : MonoBehaviour {
         
     }
     private void Start() {
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
     }
     private void Update() {
         if(isKeying&&Time.time>=currentTime)
@@ -23,6 +27,7 @@ public class ComboManager : MonoBehaviour {
     }
     public void OnKey(comboKey comboKey)
     {
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
         Debug.Log("On key:"+comboKey);
         isKeying = true;
         currentTime = Time.time+comboResetTime;
@@ -57,6 +62,7 @@ public class ComboManager : MonoBehaviour {
         //todo: on skill activate
         Debug.Log("activate skill:"+skill.name);
         OnResetSkillQueue();
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
 
     }
 }

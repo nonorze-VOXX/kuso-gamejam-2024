@@ -11,7 +11,7 @@ namespace showCommand
 
         private void Start()
         {
-            ShowCommand(new [] { comboKey.up , comboKey.down, comboKey.left});
+            //ShowCommand(new [] { comboKey.up , comboKey.down, comboKey.left});
         }
 
         public void ShowCommand(comboKey[] keys){
