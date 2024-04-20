@@ -12,6 +12,7 @@ namespace Level
 
         private void Awake()
         {
+            //todo ballance level data
             levelData = new List<List<float>>()
             {
                 new List<float>(){10,5,1},
