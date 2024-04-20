@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00e4cb09ac143d6a996ba1d5f2d3633, type: 3}
   m_Name: choosedPig
   m_EditorClassIdentifier: 
-  pigType: 0
-  maxForce: 3
-  minForce: 2
-  tiredDecreaceSpeed: 1
+  pigType: 1
+  maxForce: 5
+  minForce: 4
+  tiredDecreaceSpeed: 10
