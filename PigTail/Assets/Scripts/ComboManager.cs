@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using showCommand;
+using itemChoose;
 public class ComboManager : MonoBehaviour {
     [SerializeField]Skill[] skills;
     [SerializeField]float comboResetTime = 5;
@@ -61,9 +62,9 @@ public class ComboManager : MonoBehaviour {
     }
     void OnSkillActivate(Skill skill){
         //todo: on skill activate
+        MessageCenter.PostMessage<OpenPopPanel>();
         Debug.Log("activate skill:"+skill.name);
         OnResetSkillQueue();
-        
 
     }
 }
