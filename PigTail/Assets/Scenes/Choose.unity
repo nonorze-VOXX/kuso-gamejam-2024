@@ -879,6 +879,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1798712167}
+    - target: {fileID: 5916553517390956888, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChoosePig1
+      objectReference: {fileID: 0}
     - target: {fileID: 7180973085396700021, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

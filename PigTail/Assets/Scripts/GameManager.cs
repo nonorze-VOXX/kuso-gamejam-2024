@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+
+using Level;
+
+using System.Reflection;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,9 +15,17 @@ public class GameManager : MonoBehaviour
     public GameObject parentObj;
     public float totalSpeed = 2;
     bool isStart = false;
-    [SerializeField]bool TestStart = false;
-    
+
+    [SerializeField]
+    bool TestStart = false;
     public Transform endL,endR;
+
+    #region Ending
+    [Header("Ending")]
+    public CanvasGroup endingCanvas;
+    public Text winnerText;
+    #endregion
+
     // Start is called before the first frame update
     private void Awake() {
         MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
@@ -49,17 +63,36 @@ public class GameManager : MonoBehaviour
         float speed = (p1.GetForce() - p2.GetForce()) * totalSpeed;
         
         parentObj.transform.position = originPos + Vector2.right * Time.deltaTime * speed;
-        
-        
-        float currPos =parentObj.transform.position.x; 
-        if(currPos<endL.position.x ){
+
+        float currPos = parentObj.transform.position.x; 
+        if(currPos < endL.position.x )
+        {
             //todo: left win
+            LoadEnding(1);
             Debug.Log("Left win");
         }
-        if(currPos>endR.position.x){
-            //todo: right win
-            Debug.Log("Right win");
 
+        if(currPos > endR.position.x)
+        {
+            //todo: right win
+            LoadEnding(2);
+            Debug.Log("Right win");
         }
+    }
+
+    private void LoadEnding(int winner)
+    {
+        switch (winner)
+        {
+            case 1:
+                winnerText.text = "Left Win!";
+                break;
+            case 2:
+                winnerText.text = "Right Win!";
+                break;
+        }
+        endingCanvas.enabled = true;
+        Debug.Log("Ending do fade");
+        DoTweenExtension.DoCanvasGroupAlpha(endingCanvas, 1, 1);
     }
 }
