@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
     public float totalSpeed = 2;
     bool isStart = false;
     [SerializeField]bool TestStart = false;
+    
     public Transform endL,endR;
     // Start is called before the first frame update
+    private void Awake() {
+        MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
+        
+    }
     void Start()
     {
-        MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
         if(TestStart)
             MessageCenter.PostMessage<GameStartMessage>();
     }
