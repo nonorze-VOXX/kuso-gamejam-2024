@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5882097803999924283}
   - component: {fileID: 4152443666301962932}
   - component: {fileID: 6125489960764148409}
+  - component: {fileID: 8774459852326921335}
   m_Layer: 0
   m_Name: pig1-player
   m_TagString: Untagged
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b02e06977ba4064cb18b35bc6b1a833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboManager: {fileID: 8774459852326921335}
 --- !u!114 &6125489960764148409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,3 +242,19 @@ MonoBehaviour:
   m_DefaultActionMap: gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8774459852326921335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087409952070936509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef376837ab3d6d145933c7654bfa6c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 11400000, guid: a3f1abf6a6bd7594fbe3dc070361d59c, type: 2}
+  - {fileID: 11400000, guid: 9cde9c2a13b22714b960ee6694c4e219, type: 2}
+  comboResetTime: 2
