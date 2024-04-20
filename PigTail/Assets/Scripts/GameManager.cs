@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake() {
         MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
+        MessageCenter.RegisterMessage<GameEndMessage>(OnGameEnd);
         
     }
     void Start()
@@ -24,11 +25,14 @@ public class GameManager : MonoBehaviour
     }
     private void OnDestroy() {
         MessageCenter.UnregisterMessage<GameStartMessage>(OnGameStart);
+        MessageCenter.UnregisterMessage<GameEndMessage>(OnGameEnd);
     }
     void OnGameStart(){
         isStart = true;
     }
-
+    void OnGameEnd(){
+        isStart = false;
+    }
     // Update is called once per frame
     void Update()
     {

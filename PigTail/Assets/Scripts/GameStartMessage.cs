@@ -8,3 +8,7 @@ public class GameStartMessage:IMessage
 {
     
 }
+public class GameEndMessage:IMessage
+{
+    
+}
