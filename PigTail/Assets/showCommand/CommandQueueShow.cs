@@ -15,7 +15,7 @@ namespace showCommand
         }
 
         public void ShowCommand(comboKey[] keys){
-            for(int i = 0; i < 4; i++){
+            for(int i = 0; i < commandImages.Length; i++){
                 if (i < keys.Length)
                 {
                 commandImages[i].SetActive(true);

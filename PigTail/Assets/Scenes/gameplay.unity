@@ -562,7 +562,7 @@ MonoBehaviour:
   p1: {fileID: 1171406290}
   p2: {fileID: 876158043}
   parentObj: {fileID: 1011083710}
-  totalSpeed: 5
+  totalSpeed: 1
   TestStart: 1
   endL: {fileID: 551079487}
   endR: {fileID: 534765929}

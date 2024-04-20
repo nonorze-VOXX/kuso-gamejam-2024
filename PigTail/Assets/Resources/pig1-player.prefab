@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choosedPig: {fileID: 11400000, guid: c540b3e52da9a9b4da28b6860982aa0f, type: 2}
-  tiedBar: {fileID: 0}
+  barBackground: {fileID: 0}
+  bar: {fileID: 0}
   levelSettings: {fileID: 11400000, guid: 088c09301919a0342bed9054b93de864, type: 2}
 --- !u!114 &4152443666301962932
 MonoBehaviour:
@@ -257,4 +258,5 @@ MonoBehaviour:
   skills:
   - {fileID: 11400000, guid: a3f1abf6a6bd7594fbe3dc070361d59c, type: 2}
   - {fileID: 11400000, guid: 9cde9c2a13b22714b960ee6694c4e219, type: 2}
-  comboResetTime: 2
+  comboResetTime: 0.6
+  commandQueueShow: {fileID: 0}

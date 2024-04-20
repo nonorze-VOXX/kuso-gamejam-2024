@@ -27,13 +27,13 @@ public class ComboManager : MonoBehaviour {
     }
     public void OnKey(comboKey comboKey)
     {
-        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
         Debug.Log("On key:"+comboKey);
         isKeying = true;
         currentTime = Time.time+comboResetTime;
         //Debug.Log(comboKey);
         comboKeys += comboKey;
         comboKeysQueue.Enqueue(comboKey);
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
         CheckSkill();
 
     }
@@ -56,13 +56,14 @@ public class ComboManager : MonoBehaviour {
         comboKeys = "";
         currentIndex = 0;
         isKeying = false;
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
         Debug.Log("On reset skill");
     }
     void OnSkillActivate(Skill skill){
         //todo: on skill activate
         Debug.Log("activate skill:"+skill.name);
         OnResetSkillQueue();
-        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
+        
 
     }
 }
