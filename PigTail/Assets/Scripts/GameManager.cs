@@ -94,5 +94,6 @@ public class GameManager : MonoBehaviour
         endingCanvas.enabled = true;
         Debug.Log("Ending do fade");
         DoTweenExtension.DoCanvasGroupAlpha(endingCanvas, 1, 1);
+        MessageCenter.PostMessage<GameEndMessage>();
     }
 }
