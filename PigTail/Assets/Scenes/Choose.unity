@@ -133,16 +133,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4243436612302356025, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
       propertyPath: m_Name
-      value: Pig1 (1)
+      value: Pig2
       objectReference: {fileID: 0}
     - target: {fileID: 5916553517390956888, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1798712167}
-    - target: {fileID: 5916553517390956888, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChoosePig2
-      objectReference: {fileID: 0}
     - target: {fileID: 7180973085396700021, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -849,7 +845,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4243436612302356025, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
       propertyPath: m_Name
-      value: Pig1 (2)
+      value: Pig3
       objectReference: {fileID: 0}
     - target: {fileID: 5916553517390956888, guid: ba01b1a066e76464b8d0b077dcb12df8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
