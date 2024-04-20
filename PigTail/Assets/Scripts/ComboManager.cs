@@ -23,6 +23,7 @@ public class ComboManager : MonoBehaviour {
     }
     public void OnKey(comboKey comboKey)
     {
+        Debug.Log("On key:"+comboKey);
         isKeying = true;
         currentTime = Time.time+comboResetTime;
         Debug.Log(comboKey);
