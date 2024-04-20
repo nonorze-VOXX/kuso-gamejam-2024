@@ -1,36 +1,42 @@
 using System;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 
-    public class PigController: MonoBehaviour
+public class PigController: MonoBehaviour
     {
-        //[SerializeField] Rigidbody2D rigidbody;
         [SerializeField] float maxForce = 0;
         [SerializeField] float minForce = 0;
         [SerializeField] float tiredDecreaceSpeed = 1;
-        [SerializeField] float tiredDecreaceMod = 0.01f;
+        [SerializeField] Slider tiedBar;
+        [SerializeField] LevelSettings levelSettings;
+
         float tiredNum = 100;
         float currTiredNum = 0;
         bool isStart = false;
         void Start()
         {
             MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
-
+            currTiredNum = tiredNum;
+            tiedBar.value = 1;
         }
         private void OnDestroy() {
             MessageCenter.UnregisterMessage<GameStartMessage>(OnGameStart);
         }
         void OnGameStart(){
-            currTiredNum = tiredNum;
+            isStart = true;
         }
         private void Update() {
+            tiedBar.value = currTiredNum/tiredNum;
             if(isStart){
-                currTiredNum = Mathf.Min(0,currTiredNum - tiredDecreaceSpeed * Time.deltaTime);
+                currTiredNum = Mathf.Max(0,currTiredNum - tiredDecreaceSpeed * Time.deltaTime);
+                
             }
         }
         public float GetForce(){
-            return UnityEngine.Random.Range(minForce+currTiredNum*tiredDecreaceMod ,maxForce+currTiredNum*tiredDecreaceMod );
+            float tiredSpeed = (currTiredNum/tiredNum)*levelSettings.TiredForceMod;
+            return UnityEngine.Random.Range(minForce+tiredSpeed ,maxForce+tiredSpeed);
         }
         
     }

@@ -38,19 +38,11 @@ public class GameManager : MonoBehaviour
     private void OnUpdatePigsPos()
     {
         Vector2 originPos = parentObj.transform.position;
-        float speed = Mathf.Abs(p1.GetForce() - p2.GetForce()) * totalSpeed;
-        if (p1.GetForce() > p2.GetForce())
-        {
-            parentObj.transform.position = originPos + Vector2.right * Time.deltaTime * speed;
-        }
-        else if (p1.GetForce() < p2.GetForce())
-        {
-            parentObj.transform.position = originPos + Vector2.left * Time.deltaTime * speed;
-        }
-        else
-        {
-            parentObj.transform.position = Vector3.Lerp(originPos, Vector3.zero, Time.deltaTime);
-        }
+        float speed = (p1.GetForce() - p2.GetForce()) * totalSpeed;
+        
+        parentObj.transform.position = originPos + Vector2.right * Time.deltaTime * speed;
+        
+        
         float currPos =parentObj.transform.position.x; 
         if(currPos<endL.position.x ){
             //todo: left win
