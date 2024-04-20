@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using choose;
+using UnityEngine;
 
 namespace Level
 {
@@ -6,5 +8,6 @@ namespace Level
     public class PlayerLevel : ScriptableObject
     {
         public int level;
+        public List<ChoosedPig> enemyPigs;
     }
 }
