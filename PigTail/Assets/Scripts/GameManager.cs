@@ -69,19 +69,21 @@ public class GameManager : MonoBehaviour
         {
             //todo: left win
             LoadEnding(1);
-            Debug.Log("Left win");
+            //Debug.Log("Left win");
         }
 
         if(currPos > endR.position.x)
         {
             //todo: right win
             LoadEnding(2);
-            Debug.Log("Right win");
+            //Debug.Log("Right win");
         }
     }
 
     private void LoadEnding(int winner)
     {
+        MessageCenter.PostMessage<GameEndMessage>();
+        endingCanvas.enabled = true;
         switch (winner)
         {
             case 1:
@@ -91,9 +93,7 @@ public class GameManager : MonoBehaviour
                 winnerText.text = "Right Win!";
                 break;
         }
-        endingCanvas.enabled = true;
-        Debug.Log("Ending do fade");
         DoTweenExtension.DoCanvasGroupAlpha(endingCanvas, 1, 1);
-        MessageCenter.PostMessage<GameEndMessage>();
+        //Debug.Log("Ending do fade");
     }
 }
