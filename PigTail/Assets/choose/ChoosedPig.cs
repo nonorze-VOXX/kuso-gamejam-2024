@@ -12,5 +12,8 @@ namespace choose
     public class ChoosedPig : ScriptableObject
     {
         public PigType pigType;
+        public float maxForce = 0;
+        public float minForce = 0; 
+        public float tiredDecreaceSpeed = 1;
     }
 }

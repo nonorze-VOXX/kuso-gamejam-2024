@@ -784,9 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d2bc4e38fe087458200e73a4f5f298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 3
-  minForce: 2
-  tiredDecreaceSpeed: 10
+  choosedPig: {fileID: 11400000, guid: c540b3e52da9a9b4da28b6860982aa0f, type: 2}
   tiedBar: {fileID: 2146002633}
   levelSettings: {fileID: 11400000, guid: 088c09301919a0342bed9054b93de864, type: 2}
 --- !u!212 &876158044
@@ -1004,9 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d2bc4e38fe087458200e73a4f5f298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 3
-  minForce: 2
-  tiredDecreaceSpeed: 10
+  choosedPig: {fileID: 11400000, guid: e5213a55272e4e04c998753786becf04, type: 2}
   tiedBar: {fileID: 143569376}
   levelSettings: {fileID: 11400000, guid: 088c09301919a0342bed9054b93de864, type: 2}
 --- !u!212 &1171406291

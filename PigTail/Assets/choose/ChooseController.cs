@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using choose;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ChooseController : MonoBehaviour
@@ -54,6 +55,10 @@ public class ChooseController : MonoBehaviour
     public void ChoosePig3()
     {
         choosedPig.pigType = PigType.Pig3;
+    }
+    public void TrangeToGame()
+    {
+        SceneManager.LoadScene("gameplay");
     }
 
     private void Update()
