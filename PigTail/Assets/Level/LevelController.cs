@@ -35,12 +35,12 @@ namespace Level
 
         public ChoosedPig GetNowLevelPig()
         {
-             var cp = ScriptableObject.CreateInstance<ChoosedPig>();
-             var data=levelData[playerLevel.level % levelData.Count];
+            
+             var cp = playerLevel.enemyPigs[playerLevel.level % playerLevel.enemyPigs.Count];
              cp.pigType= PigType.Pig1;
-             cp.maxForce = data[0] *((float)playerLevel.level / levelData.Count);
-             cp.minForce = data[1] *((float)playerLevel.level / levelData.Count);
-             cp.tiredDecreaceSpeed = data[2] *((float)playerLevel.level / levelData.Count);
+             cp.maxForce   *=((int)playerLevel.level / levelData.Count+1);
+             cp.minForce   *=((int)playerLevel.level / levelData.Count+1);
+             cp.tiredDecreaceSpeed   *=((int)playerLevel.level / levelData.Count+1);
              return cp;
         }
     }
