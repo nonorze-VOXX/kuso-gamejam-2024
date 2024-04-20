@@ -23,6 +23,7 @@ public class Skill : ScriptableObject
         }
         return result;
     }
+    public Effect GetEff=>effect;
 }
 
 public enum Effect

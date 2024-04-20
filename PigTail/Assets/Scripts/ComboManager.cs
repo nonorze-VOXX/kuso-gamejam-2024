@@ -9,6 +9,7 @@ public class ComboManager : MonoBehaviour {
     [SerializeField]Skill[] skills;
     [SerializeField]float comboResetTime = 5;
     [SerializeField]CommandQueueShow commandQueueShow;
+    [SerializeField]EventManager eventManager;
     string comboKeys = "";
     Queue<comboKey> comboKeysQueue = new Queue<comboKey>();
 
@@ -63,6 +64,7 @@ public class ComboManager : MonoBehaviour {
     void OnSkillActivate(Skill skill){
         //todo: on skill activate
         MessageCenter.PostMessage<OpenPopPanel>();
+        eventManager.EventTrigger(skill.GetEff);
         Debug.Log("activate skill:"+skill.name);
         OnResetSkillQueue();
 
