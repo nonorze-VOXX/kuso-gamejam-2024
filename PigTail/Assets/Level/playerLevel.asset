@@ -15,3 +15,8 @@ MonoBehaviour:
   level: 0
   enemyPigs:
   - {fileID: 11400000, guid: 019de390beba8164ca36c27816ae5437, type: 2}
+  - {fileID: 11400000, guid: c553cb5119a7a1d4dad75049e53cade0, type: 2}
+  - {fileID: 11400000, guid: 7e54ad8aaaa769a40ba768bbbd324e37, type: 2}
+  - {fileID: 11400000, guid: 780e6f7ff65cc5046b0ade8bc7afbab6, type: 2}
+  - {fileID: 11400000, guid: 08347658732ebe843ab869b7564b864f, type: 2}
+  - {fileID: 11400000, guid: 09e0bf045ab8bfc4d8412fb12008b8dc, type: 2}
