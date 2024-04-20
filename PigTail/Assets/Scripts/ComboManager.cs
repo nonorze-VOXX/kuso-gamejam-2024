@@ -31,7 +31,7 @@ public class ComboManager : MonoBehaviour {
         Debug.Log("On key:"+comboKey);
         isKeying = true;
         currentTime = Time.time+comboResetTime;
-        Debug.Log(comboKey);
+        //Debug.Log(comboKey);
         comboKeys += comboKey;
         comboKeysQueue.Enqueue(comboKey);
         CheckSkill();
