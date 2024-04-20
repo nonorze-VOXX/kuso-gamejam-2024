@@ -4,38 +4,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 public class ComboManager : MonoBehaviour {
-    [SerializeField]Skill currentSkill;
-    
+    [SerializeField]Skill[] skills;
+    [SerializeField]float comboResetTime = 5;
+    string comboKeys = "";
+    Queue<comboKey> comboKeysQueue = new Queue<comboKey>();
     int currentIndex;
+    float currentTime;
+    bool isKeying = false;
     private void Awake() {
         currentIndex = 0;
         
     }
     private void Start() {
     }
-    public void OnKey(comboKey comboKey){
+    private void Update() {
+        if(isKeying&&Time.time>=currentTime)
+            OnResetSkillQueue();
+    }
+    public void OnKey(comboKey comboKey)
+    {
+        isKeying = true;
+        currentTime = Time.time+comboResetTime;
         Debug.Log(comboKey);
-        if(currentIndex>currentSkill.GetComboKeys.Length )
-            Debug.Log("ComoboKey out of range");
-        if(currentSkill.GetComboKeys[currentIndex] == comboKey){
-            currentIndex++;
-            if(currentIndex>=currentSkill.GetComboKeys.Length){
-                OnSkillActivate();
+        comboKeys += comboKey;
+        comboKeysQueue.Enqueue(comboKey);
+        CheckSkill();
+
+    }
+
+    private void CheckSkill()
+    {
+        foreach(var skill in skills){
+
+            if (skill.GetComboKeys() == comboKeys)
+            {
+                
+                OnSkillActivate(skill);
             }
-            
-        }
-        else{
-            currentIndex = 0;
-            OnSkillWrong();
         }
     }
-    void OnSkillWrong(){
+
+    void OnResetSkillQueue(){
         //todo: reset skill
-    }
-    void OnSkillActivate(){
+        comboKeysQueue.Clear();
+        comboKeys = "";
         currentIndex = 0;
+        isKeying = false;
+        Debug.Log("On reset skill");
+    }
+    void OnSkillActivate(Skill skill){
         //todo: on skill activate
-        Debug.Log("On skill!!!!!");
+        Debug.Log("activate skill:"+skill.name);
+        OnResetSkillQueue();
 
     }
 }
