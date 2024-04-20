@@ -15,11 +15,14 @@ public class PigController: MonoBehaviour
         float tiredNum = 100;
         float currTiredNum = 0;
         bool isStart = false;
-        void Start()
-        {
+        private void Awake() {
             MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
             currTiredNum = tiredNum;
             tiedBar.value = 1;
+            
+        }
+        void Start()
+        {
         }
         private void OnDestroy() {
             MessageCenter.UnregisterMessage<GameStartMessage>(OnGameStart);
