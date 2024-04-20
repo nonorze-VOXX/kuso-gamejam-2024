@@ -15,6 +15,7 @@ public class PigController: MonoBehaviour
         bool isStart = false;
         private void Awake() {
             MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
+            MessageCenter.RegisterMessage<GameEndMessage>(OnGameEnd);
             currTiredNum = tiredNum;
             tiedBar.value = 1;
             
@@ -24,13 +25,17 @@ public class PigController: MonoBehaviour
         }
         private void OnDestroy() {
             MessageCenter.UnregisterMessage<GameStartMessage>(OnGameStart);
+            MessageCenter.UnregisterMessage<GameEndMessage>(OnGameEnd);
+        }
+        void OnGameEnd(){
+            isStart = false;
         }
         void OnGameStart(){
             isStart = true;
         }
         private void Update() {
-            tiedBar.value = currTiredNum/tiredNum;
             if(isStart){
+                tiedBar.value = currTiredNum/tiredNum;
                 currTiredNum = Mathf.Max(0,currTiredNum - choosedPig.tiredDecreaceSpeed * Time.deltaTime);
                 
             }
