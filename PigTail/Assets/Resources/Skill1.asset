@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Skill1
   m_EditorClassIdentifier: 
   comboKeys: 000000000200000003000000
+  effect: 1
