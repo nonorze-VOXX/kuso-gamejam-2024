@@ -33,7 +33,7 @@ public class ClosePopPanel:IMessage
         {
             if(popUpPanel.activeSelf)
             {
-                timer+=Time.deltaTime;
+                timer+=Time.unscaledDeltaTime;
                 var condition = timer > keepTime;
                 if (condition)
                 {
