@@ -2772,6 +2772,8 @@ AnimationClip:
     flags: 2
   - serializedVersion: 2
     curve:
+    - time: 0
+      value: {fileID: 0}
     - time: 1.15
       value: {fileID: 0}
     - time: 1.1666666
@@ -3081,6 +3083,7 @@ AnimationClip:
     - {fileID: 21300000, guid: de56b6ebc8522e64a94d6f76bc1f3218, type: 3}
     - {fileID: 21300000, guid: de56b6ebc8522e64a94d6f76bc1f3218, type: 3}
     - {fileID: 21300000, guid: de56b6ebc8522e64a94d6f76bc1f3218, type: 3}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 21300000, guid: 93263cc2d5d22e74ca14ad3038985d3f, type: 3}
     - {fileID: 21300000, guid: 754e5e983e3272a43baa0fc59150b55f, type: 3}
