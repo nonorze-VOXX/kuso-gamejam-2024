@@ -21,6 +21,7 @@ public class PigController : MonoBehaviour
     float currTiredNum = 0;
     bool isStart = false;
     bool isChangeingTired = false;
+
     private void Awake()
     {
         MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
@@ -28,9 +29,7 @@ public class PigController : MonoBehaviour
         currTiredNum = tiredNum;
     }
 
-    void Start()
-    {
-    }
+    void Start() { }
 
     private void OnDestroy()
     {
@@ -107,22 +106,25 @@ public class PigController : MonoBehaviour
         barBackground.fillAmount = targetAmount;
         isChangeingTired = false;
     }
-    public void OnRecover(float val){
+
+    public void OnRecover(float val)
+    {
         Debug.Log("on heal");
         currTiredNum += val;
         ChangeFill(currTiredNum / tiredNum);
-
     }
-    public void OnGiveup(float val){
 
+    public void OnRecoverEnd() { }
 
-    }
-    public void OnPowerup(float val){
+    public void OnGiveup(float val) { }
 
+    public void OnGiveupEnd() { }
 
-    }
-    public void OnTilt(float val){
+    public void OnPowerup(float val) { }
 
+    public void OnPowerupEnd() { }
 
-    }
+    public void OnTilt(float val) { }
+
+    public void OnTiltEnd() { }
 }
