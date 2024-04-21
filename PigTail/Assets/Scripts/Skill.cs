@@ -19,12 +19,16 @@ public class Skill : ScriptableObject
     [TextAreaAttribute]
     string text;
     [SerializeField]
+    [TextAreaAttribute]
+    string text2;
+    [SerializeField]
     GameObject skillIcon;
     [SerializeField]
     GameObject skillAnimation;
     public GameObject SkillIcon => skillIcon;
     public GameObject SkillAnimation => skillAnimation;
     public string Text => text;
+    public string Text2 => text2;
     public string GetComboKeyStr()
     {
         string result = "";

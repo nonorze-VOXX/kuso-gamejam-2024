@@ -39,7 +39,7 @@ public class BotSkillController : MonoBehaviour {
         if(isStart && Time.timeScale!=0 && Time.time >= timeout)
         {
             var skill = skills[Random.Range(0, skills.Length)];
-            randomDialog.InteruptDialog(skill.Text);
+            randomDialog.InteruptDialog($"<b><color='red'>{skill.Text2}</color></b>");
             OnSkillActivate(skill);
         }
     }
