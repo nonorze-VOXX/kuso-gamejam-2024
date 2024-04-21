@@ -17,4 +17,4 @@ MonoBehaviour:
   effectVal: 5
   text: CCC
   skillIcon: {fileID: 914990356634446716, guid: 37ce58043037145be93a5b61d17bbce0, type: 3}
-  skillAnimation: {fileID: 5437998605497167302, guid: 75e05aace49e3454997c77d7fc3e5088, type: 3}
+  skillAnimation: {fileID: 5581621006716622287, guid: 8a1fe716dbbe640eb9cf805786331a53, type: 3}
