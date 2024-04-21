@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace itemChoose
 {
@@ -13,6 +14,8 @@ public class ClosePopPanel:IMessage
 }
     public class ItemController : MonoBehaviour
     {
+        private float timer=0;
+        public float keepTime = 4;
         public GameObject popUpPanel;
         private void Start()
         {
@@ -30,7 +33,8 @@ public class ClosePopPanel:IMessage
         {
             if(popUpPanel.activeSelf)
             {
-                var condition = Input.GetKeyDown(KeyCode.Escape);
+                timer+=Time.unscaledDeltaTime;
+                var condition = timer > keepTime;
                 if (condition)
                 {
                     MessageCenter.PostMessage<ClosePopPanel>();
@@ -45,10 +49,14 @@ public class ClosePopPanel:IMessage
         }
         void OnPopClose()
         {
+            Time.timeScale = 1;
             popUpPanel.SetActive(false);
         }
         void OnPopShow()
         {
+
+            timer = 0;
+            Time.timeScale = 0;
             popUpPanel.SetActive(true);
         }
     }

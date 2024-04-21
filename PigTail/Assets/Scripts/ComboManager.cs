@@ -3,11 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using showCommand;
+using itemChoose;
 public class ComboManager : MonoBehaviour {
     [SerializeField]Skill[] skills;
     [SerializeField]float comboResetTime = 5;
+    [SerializeField]CommandQueueShow commandQueueShow;
+    [SerializeField]EventManager eventManager;
     string comboKeys = "";
     Queue<comboKey> comboKeysQueue = new Queue<comboKey>();
+
     int currentIndex;
     float currentTime;
     bool isKeying = false;
@@ -16,6 +21,7 @@ public class ComboManager : MonoBehaviour {
         
     }
     private void Start() {
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
     }
     private void Update() {
         if(isKeying&&Time.time>=currentTime)
@@ -26,9 +32,10 @@ public class ComboManager : MonoBehaviour {
         Debug.Log("On key:"+comboKey);
         isKeying = true;
         currentTime = Time.time+comboResetTime;
-        Debug.Log(comboKey);
+        //Debug.Log(comboKey);
         comboKeys += comboKey;
         comboKeysQueue.Enqueue(comboKey);
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
         CheckSkill();
 
     }
@@ -37,7 +44,7 @@ public class ComboManager : MonoBehaviour {
     {
         foreach(var skill in skills){
 
-            if (skill.GetComboKeys() == comboKeys)
+            if (skill.GetComboKeyStr() == comboKeys)
             {
                 
                 OnSkillActivate(skill);
@@ -51,10 +58,13 @@ public class ComboManager : MonoBehaviour {
         comboKeys = "";
         currentIndex = 0;
         isKeying = false;
+        commandQueueShow.ShowCommand(comboKeysQueue.ToArray());
         Debug.Log("On reset skill");
     }
     void OnSkillActivate(Skill skill){
         //todo: on skill activate
+        MessageCenter.PostMessage<OpenPopPanel>();
+        eventManager.EventTrigger(skill.GetEff);
         Debug.Log("activate skill:"+skill.name);
         OnResetSkillQueue();
 

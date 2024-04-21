@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4152443666301962932}
   - component: {fileID: 6125489960764148409}
   - component: {fileID: 8774459852326921335}
+  - component: {fileID: 3512342720068804652}
   m_Layer: 0
   m_Name: pig1-player
   m_TagString: Untagged
@@ -101,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choosedPig: {fileID: 11400000, guid: c540b3e52da9a9b4da28b6860982aa0f, type: 2}
-  tiedBar: {fileID: 0}
+  barBackground: {fileID: 0}
+  bar: {fileID: 0}
   levelSettings: {fileID: 11400000, guid: 088c09301919a0342bed9054b93de864, type: 2}
 --- !u!114 &4152443666301962932
 MonoBehaviour:
@@ -257,4 +259,19 @@ MonoBehaviour:
   skills:
   - {fileID: 11400000, guid: a3f1abf6a6bd7594fbe3dc070361d59c, type: 2}
   - {fileID: 11400000, guid: 9cde9c2a13b22714b960ee6694c4e219, type: 2}
-  comboResetTime: 2
+  comboResetTime: 0.6
+  commandQueueShow: {fileID: 0}
+  eventManager: {fileID: 3512342720068804652}
+--- !u!114 &3512342720068804652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087409952070936509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f17abe0838f4ab48112c730d4fde5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 5882097803999924283}
