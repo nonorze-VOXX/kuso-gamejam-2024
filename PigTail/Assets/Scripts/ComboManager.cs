@@ -44,7 +44,7 @@ public class ComboManager : MonoBehaviour {
     {
         foreach(var skill in skills){
 
-            if (skill.GetComboKeys() == comboKeys)
+            if (skill.GetComboKeyStr() == comboKeys)
             {
                 
                 OnSkillActivate(skill);
