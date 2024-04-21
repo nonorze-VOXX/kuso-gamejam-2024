@@ -17,4 +17,4 @@ MonoBehaviour:
   effectVal: 1
   text: DDD
   skillIcon: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
-  skillAnimation: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
+  skillAnimation: {fileID: 7897885690239989724, guid: e3f639435cf6b4b7b9cf8154d053e145, type: 3}
