@@ -141,5 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7ef1eb48ffdfb47baf3159de350087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asset: {fileID: 0}
-  bgmSource: {fileID: 0}
+  asset: {fileID: 11400000, guid: 40c998658071e6e48ab4fc45535ac2fb, type: 2}
+  bgmSource: {fileID: 6851659958202810480}
