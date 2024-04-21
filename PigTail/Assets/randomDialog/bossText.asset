@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5aa4e2ed3b8a49d782398adab7cfc88c, type: 3}
-  m_Name: textObj
+  m_Name: bossText
   m_EditorClassIdentifier: 
   textList:
   - "\u6539\u4E00\u4E0B\u5F88\u5FEB\u5427\uFF1F"
