@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     [SerializeField]
-    private PigController pig;
+    private PigController player;
 
     private void Update() { }
 
@@ -23,74 +23,88 @@ public class EventManager : MonoBehaviour
     /// <param name="effect"></param>
     /// <param name="startAction"></param>
     /// <param name="endAction"></param>
-    public void EventTrigger(Effect effect, float value)
+    public void EventTrigger(Effect effect, Action startAction, Action endAction)
     {
         switch (effect)
         {
             case Effect.Recover:
-                Recover(value);
+                Recover(startAction, endAction);
                 break;
             case Effect.Giveup:
-                Giveup(value);
+                Giveup(startAction, endAction);
                 break;
             case Effect.Powerup:
-                Powerup(value);
+                Powerup(startAction, endAction);
                 break;
             case Effect.Tilt:
-                Tilt(value);
+                Tilt(startAction, endAction);
                 break;
         }
     }
 
-    public void Recover(float value)
+    public void Recover(Action startAction, Action endAction)
     {
-        StartCoroutine(RecoverCoroutine(value));
+        StartCoroutine(RecoverCoroutine(startAction, endAction));
     }
 
-    IEnumerator RecoverCoroutine(float value)
+    IEnumerator RecoverCoroutine(Action startAction, Action endAction)
     {
+        startAction?.Invoke();
+
         yield return new WaitForSeconds(4);
+
+        endAction?.Invoke();
     }
 
-    public void Giveup(float value)
+    public void Giveup(Action startAction, Action endAction)
     {
-        StartCoroutine(GiveupCoroutine(value));
+        StartCoroutine(GiveupCoroutine(startAction, endAction));
     }
 
-    IEnumerator GiveupCoroutine(float value)
+    IEnumerator GiveupCoroutine(Action startAction, Action endAction)
     {
+        startAction?.Invoke();
+
         yield return new WaitForSeconds(1);
+
+        endAction?.Invoke();
     }
 
-    public void Powerup(float value)
+    public void Powerup(Action startAction, Action endAction)
     {
-        StartCoroutine(PowerupCoroutine(value));
+        StartCoroutine(PowerupCoroutine(startAction, endAction));
     }
 
-    IEnumerator PowerupCoroutine(float value)
+    IEnumerator PowerupCoroutine(Action startAction, Action endAction)
     {
+        startAction?.Invoke();
+
         yield return new WaitForSeconds(0);
+
+        endAction?.Invoke();
     }
 
     [Header("Tilt Event")]
     [SerializeField]
     private GameObject barGO;
 
-    public void Tilt(float value)
+    public void Tilt(Action startAction, Action endAction)
     {
-        StartCoroutine(TiltCoroutine(value));
+        StartCoroutine(TiltCoroutine(startAction, endAction));
     }
 
-    IEnumerator TiltCoroutine(float value)
+    IEnumerator TiltCoroutine(Action startAction, Action endAction)
     {
         //Start
         barGO.transform.localPosition -= new Vector3(0, 150, 0);
         barGO.transform.rotation = Quaternion.Euler(0, 0, 45);
+        startAction?.Invoke();
 
         yield return new WaitForSeconds(4);
 
         //End
         barGO.transform.rotation = Quaternion.Euler(0, 0, 0);
         barGO.transform.localPosition += new Vector3(0, 150, 0);
+        endAction?.Invoke();
     }
 }
