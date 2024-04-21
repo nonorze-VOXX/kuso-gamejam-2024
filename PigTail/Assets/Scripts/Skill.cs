@@ -13,6 +13,9 @@ public class Skill : ScriptableObject
 
     [SerializeField]
     Effect effect;
+    [SerializeField]
+    [TextAreaAttribute]
+    string text;
 
     public string GetComboKeyStr()
     {
