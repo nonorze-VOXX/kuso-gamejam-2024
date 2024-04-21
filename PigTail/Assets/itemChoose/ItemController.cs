@@ -67,8 +67,9 @@ public class ClosePopPanel:IMessage
         {
             tmpIcon = Instantiate(msg.skill.SkillIcon,popUpPanel.transform.GetChild(1).transform);
             
-            tmpAnimation = Instantiate(msg.skill.SkillAnimation, popUpPanel.transform.GetChild(1).transform);
-            
+            tmpAnimation = Instantiate(msg.skill.SkillAnimation, popUpPanel.transform.GetChild(0).transform);
+
+            popUpPanel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = msg.skill.Text;
                 
             tmpAction = msg.OnClose;
             timer = 0;

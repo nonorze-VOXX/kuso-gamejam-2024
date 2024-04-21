@@ -15,4 +15,6 @@ MonoBehaviour:
   comboKeys: 0100000004000000
   effect: 3
   effectVal: 0
-  text: 
+  text: AAA
+  skillIcon: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
+  skillAnimation: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
