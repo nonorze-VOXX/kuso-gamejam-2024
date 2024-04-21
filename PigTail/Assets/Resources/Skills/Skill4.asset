@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Skill4
   m_EditorClassIdentifier: 
   comboKeys: 010000000200000003000000
-  effect: 2
+  effect: 4
+  text: 
