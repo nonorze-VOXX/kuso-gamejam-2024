@@ -348,6 +348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1900417037}
     m_Modifications:
+    - target: {fileID: 2751978385036922313, guid: 9042ffc3c59ee914fb223aeba4573f95, type: 3}
+      propertyPath: textListObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bd8a52a50ed98742a0937a30d3a34b1, type: 2}
     - target: {fileID: 4120343572956826523, guid: 9042ffc3c59ee914fb223aeba4573f95, type: 3}
       propertyPath: m_Name
       value: Panel

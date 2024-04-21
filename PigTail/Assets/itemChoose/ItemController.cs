@@ -1,12 +1,14 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace itemChoose
 {
 public class OpenPopPanel:IMessageWithData
 {
     public Action OnClose;
+    public Skill skill;
 }
 public class ClosePopPanel:IMessage
 {
@@ -52,15 +54,28 @@ public class ClosePopPanel:IMessage
         {
             Time.timeScale = 1;
             popUpPanel.SetActive(false);
+            if(tmpAnimation!=null)
+                Destroy(tmpAnimation);
+            if (tmpIcon!=null)
+                Destroy(tmpIcon);
             if(tmpAction!=null)
                 tmpAction();
         }
+        GameObject tmpIcon;
+        GameObject tmpAnimation;
         void OnPopShow(OpenPopPanel msg)
         {
+            tmpIcon = Instantiate(msg.skill.SkillIcon,popUpPanel.transform.GetChild(1).transform);
+            
+            tmpAnimation = Instantiate(msg.skill.SkillAnimation, popUpPanel.transform.GetChild(0).transform);
+
+            popUpPanel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = msg.skill.Text;
+                
             tmpAction = msg.OnClose;
             timer = 0;
             Time.timeScale = 0;
             popUpPanel.SetActive(true);
         }
+
     }
 }

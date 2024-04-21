@@ -68,7 +68,8 @@ public class ComboManager : MonoBehaviour {
             new OpenPopPanel(){
                 OnClose =()=>{
                     eventManager.EventTrigger(skill.GetEff,skill.GetEffVal);
-                }
+                },
+                skill=skill
             });
         
         Debug.Log("activate skill:"+skill.name);
