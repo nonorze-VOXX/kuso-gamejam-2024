@@ -454,6 +454,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7043359941354274389, guid: 9042ffc3c59ee914fb223aeba4573f95, type: 3}
   m_PrefabInstance: {fileID: 278764458}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &278764460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2751978385036922313, guid: 9042ffc3c59ee914fb223aeba4573f95, type: 3}
+  m_PrefabInstance: {fileID: 278764458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55309df6f2374403a0c58d6d46f0d36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &334084847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,8 +1434,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9cde9c2a13b22714b960ee6694c4e219, type: 2}
   - {fileID: 11400000, guid: 8359efddd5762dc4fae6cdcf50df07b6, type: 2}
   - {fileID: 11400000, guid: 803c37a8df2acea4d88101d987c802d2, type: 2}
-  ranTimeoutMin: 1
-  ranTimeoutMax: 1
+  ranTimeoutMin: -10
+  ranTimeoutMax: 10
+  randomDialog: {fileID: 278764460}
+  timeout: 0
 --- !u!114 &1171406293
 MonoBehaviour:
   m_ObjectHideFlags: 0
