@@ -101,7 +101,7 @@ public class EventManager : MonoBehaviour
     {
         //Start
         barGO.transform.localPosition -= new Vector3(0, 150, 0);
-        barGO.transform.rotation = Quaternion.Euler(0, 0, 45);
+        barGO.transform.rotation = Quaternion.Euler(0, 0, -45);
         pig.OnTilt(value);
 
         yield return new WaitForSeconds(4);
