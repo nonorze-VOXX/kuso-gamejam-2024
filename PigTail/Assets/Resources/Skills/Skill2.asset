@@ -15,6 +15,6 @@ MonoBehaviour:
   comboKeys: 010000000500000005000000
   effect: 2
   effectVal: 1
-  text: DDD
+  text: "\u8D95\u8457\u4E0B\u73ED\uFF0C\u505A\u4E8B\u6548\u7387\u500D\u589E\r\n\u62C9\u529B\u589E\u5F37\uFF01"
   skillIcon: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
   skillAnimation: {fileID: 7897885690239989724, guid: e3f639435cf6b4b7b9cf8154d053e145, type: 3}
