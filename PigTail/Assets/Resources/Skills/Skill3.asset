@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0c6024cffe0584d9f821aac4b34a7f, type: 3}
   m_Name: Skill3
   m_EditorClassIdentifier: 
-  comboKeys: 0100000004000000
+  comboKeys: 01000000040000000400000004000000
   effect: 3
-  effectVal: 0
+  effectVal: 1
   text: "\u653E\u4E86\u4E00\u500B\u5C41\u7D66\u5C0D\u9762\u805E\r\n\u5C0D\u65B9\u529B\u5EA6\u6B78\u96F6\uFF01\r"
   text2: "\u4F60\u770B\u8D77\u4F86\u5F88\u7D2F\uFF1F\u4E8B\u60C5\u505A\u5B8C\u4E86\u55CE\uFF1F"
   skillIcon: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}

@@ -416,7 +416,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4819593a1b1d93c43b8339b7a19082df, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -1413,7 +1413,7 @@ Transform:
   m_GameObject: {fileID: 1171406288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.36, y: 0.03, z: -0.071502425}
+  m_LocalPosition: {x: 1.15, y: 0.03, z: -0.071502425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1507,9 +1507,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9cde9c2a13b22714b960ee6694c4e219, type: 2}
   - {fileID: 11400000, guid: 8359efddd5762dc4fae6cdcf50df07b6, type: 2}
   - {fileID: 11400000, guid: 803c37a8df2acea4d88101d987c802d2, type: 2}
-  ranTimeoutMin: 1
-  ranTimeoutMax: 4
-  randomDialog: {fileID: 0}
+  ranTimeoutMin: 0
+  ranTimeoutMax: 3
+  randomDialog: {fileID: 2040518307}
   timeout: 0
 --- !u!114 &1171406293
 MonoBehaviour:
@@ -1996,7 +1996,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4819593a1b1d93c43b8339b7a19082df, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -2284,7 +2284,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4819593a1b1d93c43b8339b7a19082df, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -3054,7 +3054,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4819593a1b1d93c43b8339b7a19082df, type: 3}
     m_FontSize: 88
     m_FontStyle: 1
     m_BestFit: 0
@@ -3167,6 +3167,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034400262}
   m_CullTransparentMesh: 1
+--- !u!114 &2040518307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2751978385036922313, guid: 9042ffc3c59ee914fb223aeba4573f95, type: 3}
+  m_PrefabInstance: {fileID: 1610117640}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55309df6f2374403a0c58d6d46f0d36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4192691458250947308
 PrefabInstance:
   m_ObjectHideFlags: 0
