@@ -40,5 +40,11 @@ namespace randomDialog
                 }
             }
         }
+        public void InteruptDialog(string newText)
+        {
+            dialogBox.gameObject.transform.parent.gameObject.SetActive(true);
+            dialogBox.text = newText;
+            timer = 0;
+        }
     }
 }
