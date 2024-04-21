@@ -20,7 +20,7 @@ public class PigController : MonoBehaviour
     float tiredNum = 100;
     float currTiredNum = 0;
     bool isStart = false;
-
+    bool isChangeingTired = false;
     private void Awake()
     {
         MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
@@ -50,9 +50,9 @@ public class PigController : MonoBehaviour
 
     private void Update()
     {
-        if (isStart)
+        if (isStart && !isChangeingTired)
         {
-            ChangeFill(currTiredNum / tiredNum);
+            //ChangeFill(currTiredNum / tiredNum);
             currTiredNum = Mathf.Max(
                 0,
                 currTiredNum - choosedPig.tiredDecreaceSpeed * Time.deltaTime
@@ -80,7 +80,7 @@ public class PigController : MonoBehaviour
         float startFillAmount = bar.fillAmount;
         float currentFillAmount;
         float fillSpeed = 0.1f;
-
+        isChangeingTired = true;
         while (elapsedTime < fillSpeed)
         {
             elapsedTime += Time.deltaTime;
@@ -105,5 +105,24 @@ public class PigController : MonoBehaviour
 
         // Ensure final value is exactly what we want
         barBackground.fillAmount = targetAmount;
+        isChangeingTired = false;
+    }
+    public void OnRecover(float val){
+        Debug.Log("on heal");
+        currTiredNum += val;
+        ChangeFill(currTiredNum / tiredNum);
+
+    }
+    public void OnGiveup(float val){
+
+
+    }
+    public void OnPowerup(float val){
+
+
+    }
+    public void OnTilt(float val){
+
+
     }
 }

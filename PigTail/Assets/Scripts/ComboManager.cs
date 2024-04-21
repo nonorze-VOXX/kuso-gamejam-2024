@@ -62,9 +62,14 @@ public class ComboManager : MonoBehaviour {
         Debug.Log("On reset skill");
     }
     void OnSkillActivate(Skill skill){
-        //todo: on skill activate
-        MessageCenter.PostMessage<OpenPopPanel>();
-        eventManager.EventTrigger(skill.GetEff);
+        
+        MessageCenter.PostMessage<OpenPopPanel>(
+            new OpenPopPanel(){
+                OnClose =()=>{
+                    //eventManager.EventTrigger(skill.GetEff,skill.GetEffVal);
+                }
+            });
+        
         Debug.Log("activate skill:"+skill.name);
         OnResetSkillQueue();
 
