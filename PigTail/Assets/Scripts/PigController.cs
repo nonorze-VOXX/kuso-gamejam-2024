@@ -116,9 +116,13 @@ public class PigController : MonoBehaviour
 
     public void OnRecoverEnd() { }
 
-    public void OnGiveup(float val) { }
+    public void OnGiveup(float val) { 
 
-    public void OnGiveupEnd() { }
+    }
+
+    public void OnGiveupEnd() { 
+        
+    }
 
     public void OnPowerup(float val) { }
 
