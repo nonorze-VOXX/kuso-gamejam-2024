@@ -1203,6 +1203,8 @@ GameObject:
   - component: {fileID: 1171406289}
   - component: {fileID: 1171406291}
   - component: {fileID: 1171406290}
+  - component: {fileID: 1171406293}
+  - component: {fileID: 1171406292}
   m_Layer: 0
   m_Name: pig2
   m_TagString: Untagged
@@ -1295,6 +1297,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1171406292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171406288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668b93e8854d49d458323258cfd9abaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventManager: {fileID: 1171406293}
+  skills:
+  - {fileID: 11400000, guid: a3f1abf6a6bd7594fbe3dc070361d59c, type: 2}
+  - {fileID: 11400000, guid: 9cde9c2a13b22714b960ee6694c4e219, type: 2}
+  - {fileID: 11400000, guid: 8359efddd5762dc4fae6cdcf50df07b6, type: 2}
+  - {fileID: 11400000, guid: 803c37a8df2acea4d88101d987c802d2, type: 2}
+  ranTimeoutMin: 1
+  ranTimeoutMax: 1
+--- !u!114 &1171406293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171406288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f17abe0838f4ab48112c730d4fde5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pig: {fileID: 1171406290}
+  powerupTime: 1
+  tileTime: 4
+  giveUpTime: 1
+  barGO: {fileID: 93848581}
 --- !u!4 &1223908313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4512388787385430232, guid: 75e05aace49e3454997c77d7fc3e5088, type: 3}

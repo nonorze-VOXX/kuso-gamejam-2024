@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comboKeys: 0100000004000000
   effect: 3
-  effectVal: 0
+  effectVal: 1
   text: 
+  skillIcon: {fileID: 0}
+  skillAnimation: {fileID: 0}
