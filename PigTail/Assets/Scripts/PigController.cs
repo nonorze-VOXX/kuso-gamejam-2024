@@ -143,8 +143,10 @@ public class PigController : MonoBehaviour
     }
 
     public void OnTilt(float val) { 
-
+        tiredDecreaceSpeed = val;
     }
 
-    public void OnTiltEnd() { }
+    public void OnTiltEnd() { 
+        tiredDecreaceSpeed = choosedPig.tiredDecreaceSpeed;
+    }
 }
