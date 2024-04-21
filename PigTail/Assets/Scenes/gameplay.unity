@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c795b75744945abbb4bbad72d657b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keepTime: 4
+  keepTime: 1
   popUpPanel: {fileID: 430039337}
 --- !u!1001 &1360442914
 PrefabInstance:
@@ -2777,6 +2777,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pig1-player
       objectReference: {fileID: 0}
+    - target: {fileID: 3512342720068804652, guid: 7763562623f7a36449404f84139eedf3, type: 3}
+      propertyPath: pig
+      value: 
+      objectReference: {fileID: 876158043}
+    - target: {fileID: 3512342720068804652, guid: 7763562623f7a36449404f84139eedf3, type: 3}
+      propertyPath: barGO
+      value: 
+      objectReference: {fileID: 1681035674}
     - target: {fileID: 5429633742656615814, guid: 7763562623f7a36449404f84139eedf3, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2797,6 +2805,18 @@ PrefabInstance:
       propertyPath: commandQueueShow
       value: 
       objectReference: {fileID: 2027644005}
+    - target: {fileID: 8774459852326921335, guid: 7763562623f7a36449404f84139eedf3, type: 3}
+      propertyPath: skills.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774459852326921335, guid: 7763562623f7a36449404f84139eedf3, type: 3}
+      propertyPath: skills.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8359efddd5762dc4fae6cdcf50df07b6, type: 2}
+    - target: {fileID: 8774459852326921335, guid: 7763562623f7a36449404f84139eedf3, type: 3}
+      propertyPath: skills.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 803c37a8df2acea4d88101d987c802d2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

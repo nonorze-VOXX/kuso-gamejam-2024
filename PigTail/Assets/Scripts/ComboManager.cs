@@ -66,7 +66,7 @@ public class ComboManager : MonoBehaviour {
         MessageCenter.PostMessage<OpenPopPanel>(
             new OpenPopPanel(){
                 OnClose =()=>{
-                    //eventManager.EventTrigger(skill.GetEff,skill.GetEffVal);
+                    eventManager.EventTrigger(skill.GetEff,skill.GetEffVal);
                 }
             });
         

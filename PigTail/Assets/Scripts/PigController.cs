@@ -130,13 +130,16 @@ public class PigController : MonoBehaviour
     public void OnGiveupEnd() { 
         
     }
-
+    
     public void OnPowerup(float val) { 
-        
+        maxForce += val;
+        minForce += val;
     }
 
     public void OnPowerupEnd() { 
-
+        maxForce = choosedPig.maxForce;
+        minForce = choosedPig.minForce;
+        
     }
 
     public void OnTilt(float val) { 
