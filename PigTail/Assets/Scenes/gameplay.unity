@@ -1242,7 +1242,7 @@ MonoBehaviour:
   barBackground: {fileID: 93848583}
   bar: {fileID: 1059227844}
   levelSettings: {fileID: 11400000, guid: 088c09301919a0342bed9054b93de864, type: 2}
-  otherPig: {fileID: 0}
+  otherPig: {fileID: 876158043}
 --- !u!212 &1171406291
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2797,6 +2797,10 @@ PrefabInstance:
       propertyPath: tiedBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5882097803999924283, guid: 7763562623f7a36449404f84139eedf3, type: 3}
+      propertyPath: otherPig
+      value: 
+      objectReference: {fileID: 1171406290}
     - target: {fileID: 5882097803999924283, guid: 7763562623f7a36449404f84139eedf3, type: 3}
       propertyPath: barBackground
       value: 

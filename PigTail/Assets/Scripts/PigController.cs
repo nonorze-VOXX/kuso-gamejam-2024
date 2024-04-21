@@ -122,23 +122,34 @@ public class PigController : MonoBehaviour
     public void OnRecoverEnd() { 
 
     }
-
+    public void OnPowerLess(float val){
+        powerlessForce = val;
+        maxForce -= powerlessForce;
+        minForce -= powerlessForce;
+    }
+    public void OnPowerLessEnd(){
+        maxForce += powerlessForce;
+        minForce += powerlessForce;
+    }   
     public void OnGiveup(float val) { 
-
+        otherPig.OnPowerLess(val);
     }
 
     public void OnGiveupEnd() { 
-        
+        otherPig.OnPowerLessEnd();
     }
     
+    float powerupForce = 0;
+    float powerlessForce = 0;
     public void OnPowerup(float val) { 
-        maxForce += val;
-        minForce += val;
+        powerupForce = val;
+        maxForce += powerupForce;
+        minForce += powerupForce;
     }
 
     public void OnPowerupEnd() { 
-        maxForce = choosedPig.maxForce;
-        minForce = choosedPig.minForce;
+        maxForce -= powerupForce;
+        minForce -= powerupForce;
         
     }
 
