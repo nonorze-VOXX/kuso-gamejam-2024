@@ -12,6 +12,7 @@ public class ComboManager : MonoBehaviour {
     [SerializeField]EventManager eventManager;
     string comboKeys = "";
     Queue<comboKey> comboKeysQueue = new Queue<comboKey>();
+    public List<PopUpContext> popUpContexts;
 
     int currentIndex;
     float currentTime;
