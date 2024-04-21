@@ -14,8 +14,11 @@ public class Skill : ScriptableObject
     [SerializeField]
     Effect effect;
     [SerializeField]
+    float effectVal;
+    [SerializeField]
     [TextAreaAttribute]
     string text;
+
 
     public string GetComboKeyStr()
     {
@@ -30,6 +33,7 @@ public class Skill : ScriptableObject
         return comboKeys;
     }
     public Effect GetEff=>effect;
+    public float GetEffVal=>effectVal;
 }
 
 public enum Effect

@@ -4,9 +4,9 @@ using UnityEngine.Serialization;
 
 namespace itemChoose
 {
-public class OpenPopPanel:IMessage
+public class OpenPopPanel:IMessageWithData
 {
-    
+    public Action OnClose;
 }
 public class ClosePopPanel:IMessage
 {
@@ -17,6 +17,7 @@ public class ClosePopPanel:IMessage
         private float timer=0;
         public float keepTime = 4;
         public GameObject popUpPanel;
+        Action tmpAction;
         private void Start()
         {
             MessageCenter.RegisterMessage<OpenPopPanel>(OnPopShow);
@@ -26,7 +27,7 @@ public class ClosePopPanel:IMessage
         }
         public void ClickItem(BattleItem item)
         {
-            MessageCenter.PostMessage<OpenPopPanel>();
+            MessageCenter.PostMessage<OpenPopPanel>(new OpenPopPanel(){});
         }
 
         private void Update()
@@ -51,10 +52,12 @@ public class ClosePopPanel:IMessage
         {
             Time.timeScale = 1;
             popUpPanel.SetActive(false);
+            if(tmpAction!=null)
+                tmpAction();
         }
-        void OnPopShow()
+        void OnPopShow(OpenPopPanel msg)
         {
-
+            tmpAction = msg.OnClose;
             timer = 0;
             Time.timeScale = 0;
             popUpPanel.SetActive(true);

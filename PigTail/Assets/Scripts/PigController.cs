@@ -16,21 +16,25 @@ public class PigController : MonoBehaviour
 
     [SerializeField]
     LevelSettings levelSettings;
-
+    [SerializeField]
+    PigController otherPig;
+    float minForce,maxForce,tiredDecreaceSpeed;
     float tiredNum = 100;
     float currTiredNum = 0;
     bool isStart = false;
+    bool isChangeingTired = false;
 
     private void Awake()
     {
         MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
         MessageCenter.RegisterMessage<GameEndMessage>(OnGameEnd);
         currTiredNum = tiredNum;
+        minForce =  choosedPig.minForce;
+        maxForce =  choosedPig.maxForce;
+        tiredDecreaceSpeed = choosedPig.tiredDecreaceSpeed;
     }
 
-    void Start()
-    {
-    }
+    void Start() { }
 
     private void OnDestroy()
     {
@@ -50,13 +54,13 @@ public class PigController : MonoBehaviour
 
     private void Update()
     {
-        if (isStart)
+        if (isStart && !isChangeingTired)
         {
-            ChangeFill(currTiredNum / tiredNum);
             currTiredNum = Mathf.Max(
                 0,
-                currTiredNum - choosedPig.tiredDecreaceSpeed * Time.deltaTime
+                currTiredNum - tiredDecreaceSpeed * Time.deltaTime
             );
+            bar.fillAmount  = currTiredNum / tiredNum;
         }
     }
 
@@ -64,8 +68,8 @@ public class PigController : MonoBehaviour
     {
         float tiredSpeed = (currTiredNum / tiredNum) * levelSettings.TiredForceMod;
         return UnityEngine.Random.Range(
-            choosedPig.minForce + tiredSpeed,
-            choosedPig.maxForce + tiredSpeed
+            minForce + tiredSpeed,
+            maxForce + tiredSpeed
         );
     }
 
@@ -80,7 +84,7 @@ public class PigController : MonoBehaviour
         float startFillAmount = bar.fillAmount;
         float currentFillAmount;
         float fillSpeed = 0.1f;
-
+        isChangeingTired = true;
         while (elapsedTime < fillSpeed)
         {
             elapsedTime += Time.deltaTime;
@@ -105,5 +109,44 @@ public class PigController : MonoBehaviour
 
         // Ensure final value is exactly what we want
         barBackground.fillAmount = targetAmount;
+        isChangeingTired = false;
+    }
+
+    public void OnRecover(float val)
+    {
+        Debug.Log("on heal");
+        currTiredNum += val;
+        ChangeFill(currTiredNum / tiredNum);
+    }
+
+    public void OnRecoverEnd() { 
+
+    }
+
+    public void OnGiveup(float val) { 
+
+    }
+
+    public void OnGiveupEnd() { 
+        
+    }
+    
+    public void OnPowerup(float val) { 
+        maxForce += val;
+        minForce += val;
+    }
+
+    public void OnPowerupEnd() { 
+        maxForce = choosedPig.maxForce;
+        minForce = choosedPig.minForce;
+        
+    }
+
+    public void OnTilt(float val) { 
+        tiredDecreaceSpeed = val;
+    }
+
+    public void OnTiltEnd() { 
+        tiredDecreaceSpeed = choosedPig.tiredDecreaceSpeed;
     }
 }

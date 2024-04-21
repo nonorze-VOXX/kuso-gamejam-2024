@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0c6024cffe0584d9f821aac4b34a7f, type: 3}
   m_Name: Skill3
   m_EditorClassIdentifier: 
-  comboKeys: 010000000200000003000000
-  effect: 2
+  comboKeys: 0100000004000000
+  effect: 3
+  effectVal: 0
+  text: 
