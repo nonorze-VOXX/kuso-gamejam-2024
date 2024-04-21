@@ -14,7 +14,7 @@ public class Skill : ScriptableObject
     [SerializeField]
     Effect effect;
 
-    public string GetComboKeys()
+    public string GetComboKeyStr()
     {
         string result = "";
         foreach (var key in comboKeys)
@@ -23,6 +23,10 @@ public class Skill : ScriptableObject
         }
         return result;
     }
+    public comboKey[] GetComboKeys(){
+        return comboKeys;
+    }
+    public Effect GetEff=>effect;
 }
 
 public enum Effect

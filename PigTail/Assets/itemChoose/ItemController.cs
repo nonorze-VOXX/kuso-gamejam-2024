@@ -49,11 +49,14 @@ public class ClosePopPanel:IMessage
         }
         void OnPopClose()
         {
+            Time.timeScale = 1;
             popUpPanel.SetActive(false);
         }
         void OnPopShow()
         {
+
             timer = 0;
+            Time.timeScale = 0;
             popUpPanel.SetActive(true);
         }
     }
