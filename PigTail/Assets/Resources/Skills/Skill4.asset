@@ -15,6 +15,7 @@ MonoBehaviour:
   comboKeys: 010000000200000003000000
   effect: 4
   effectVal: -1
-  text: "\u653E\u4E86\u4E00\u500B\u5C41\u7D66\u5C0D\u9762\u805E\r\n\u5C0D\u65B9\u529B\u5EA6\u6B78\u96F6\uFF01"
+  text: "\u8DCC\u5012\u5F15\u767C\u5730\u9707"
+  text2: "\u5C0F\u7761\u4E00\u4E0B\u597D\u4E86"
   skillIcon: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
   skillAnimation: {fileID: 1006970075295921240, guid: 9323124c38faa41428cd9a699ed6fdd7, type: 3}
