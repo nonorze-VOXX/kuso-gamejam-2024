@@ -16,7 +16,9 @@ public class PigController : MonoBehaviour
 
     [SerializeField]
     LevelSettings levelSettings;
-
+    [SerializeField]
+    PigController otherPig;
+    float minForce,maxForce,tiredDecreaceSpeed;
     float tiredNum = 100;
     float currTiredNum = 0;
     bool isStart = false;
@@ -27,6 +29,9 @@ public class PigController : MonoBehaviour
         MessageCenter.RegisterMessage<GameStartMessage>(OnGameStart);
         MessageCenter.RegisterMessage<GameEndMessage>(OnGameEnd);
         currTiredNum = tiredNum;
+        minForce =  choosedPig.minForce;
+        maxForce =  choosedPig.maxForce;
+        tiredDecreaceSpeed = choosedPig.tiredDecreaceSpeed;
     }
 
     void Start() { }
@@ -51,11 +56,11 @@ public class PigController : MonoBehaviour
     {
         if (isStart && !isChangeingTired)
         {
-            //ChangeFill(currTiredNum / tiredNum);
             currTiredNum = Mathf.Max(
                 0,
-                currTiredNum - choosedPig.tiredDecreaceSpeed * Time.deltaTime
+                currTiredNum - tiredDecreaceSpeed * Time.deltaTime
             );
+            bar.fillAmount  = currTiredNum / tiredNum;
         }
     }
 
@@ -63,8 +68,8 @@ public class PigController : MonoBehaviour
     {
         float tiredSpeed = (currTiredNum / tiredNum) * levelSettings.TiredForceMod;
         return UnityEngine.Random.Range(
-            choosedPig.minForce + tiredSpeed,
-            choosedPig.maxForce + tiredSpeed
+            minForce + tiredSpeed,
+            maxForce + tiredSpeed
         );
     }
 
@@ -114,7 +119,9 @@ public class PigController : MonoBehaviour
         ChangeFill(currTiredNum / tiredNum);
     }
 
-    public void OnRecoverEnd() { }
+    public void OnRecoverEnd() { 
+
+    }
 
     public void OnGiveup(float val) { 
 
@@ -124,11 +131,17 @@ public class PigController : MonoBehaviour
         
     }
 
-    public void OnPowerup(float val) { }
+    public void OnPowerup(float val) { 
+        
+    }
 
-    public void OnPowerupEnd() { }
+    public void OnPowerupEnd() { 
 
-    public void OnTilt(float val) { }
+    }
+
+    public void OnTilt(float val) { 
+
+    }
 
     public void OnTiltEnd() { }
 }
