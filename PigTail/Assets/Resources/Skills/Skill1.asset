@@ -17,4 +17,4 @@ MonoBehaviour:
   effectVal: 5
   text: "\u805E\u805E\u9214\u7968\u7684\u5473\u9053\uFF0C\u53C8\u80FD\u7E7C\u7E8C\u5DE5\u4F5C\u4E86\r\n\u9AD4\u529B\u4E0A\u5347\uFF01"
   skillIcon: {fileID: 914990356634446716, guid: 37ce58043037145be93a5b61d17bbce0, type: 3}
-  skillAnimation: {fileID: 7897885690239989724, guid: e3f639435cf6b4b7b9cf8154d053e145, type: 3}
+  skillAnimation: {fileID: 7429279722418260040, guid: 14103d45c1b3d694da7a386fefdab33b, type: 3}
