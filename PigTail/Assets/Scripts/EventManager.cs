@@ -7,7 +7,8 @@ public class EventManager : MonoBehaviour
 {
     [SerializeField]
     private PigController pig;
-
+    [SerializeField]
+    float powerupTime = 1f ,tileTime =4f,giveUpTime = 1f;
     private void Update() { }
 
     /// <summary>
@@ -67,7 +68,7 @@ public class EventManager : MonoBehaviour
     {
         pig.OnGiveup(value);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(giveUpTime);
 
         pig.OnGiveupEnd();
         endAction?.Invoke();
@@ -82,7 +83,7 @@ public class EventManager : MonoBehaviour
     {
         pig.OnPowerup(value);
 
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(powerupTime);
 
         pig.OnPowerupEnd();
         endAction?.Invoke();
@@ -104,7 +105,7 @@ public class EventManager : MonoBehaviour
         barGO.transform.rotation = Quaternion.Euler(0, 0, -45);
         pig.OnTilt(value);
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(tileTime);
 
         //End
         barGO.transform.rotation = Quaternion.Euler(0, 0, 0);
